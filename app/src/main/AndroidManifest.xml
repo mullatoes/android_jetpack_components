@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SeniorAndroidDev"
         tools:targetApi="31">
         <activity
-            android:name=".recyclerviewFundamentals.RecyclerViewFundamentalsActivity"
+            android:name=".coroutines.CoroutinesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,15 +22,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".navigationComponent.NavigationComponentActivity"
+            android:name=".recyclerviewFundamentals.RecyclerViewFundamentalsActivity"
             android:exported="false">
 
         </activity>
         <activity
+            android:name=".navigationComponent.NavigationComponentActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
