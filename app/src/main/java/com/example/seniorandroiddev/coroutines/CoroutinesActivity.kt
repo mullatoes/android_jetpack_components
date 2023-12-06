@@ -63,5 +63,4 @@ class CoroutinesActivity : AppCompatActivity() {
         return 100
     }
 
-
 }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myviewmodel"
+            type="com.example.seniorandroiddev.room.viewmodel.SubscriberViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".room.WorkingWithActivity">
+
+        <EditText
+            android:id="@+id/editText_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:text="@={myviewmodel.inputName}"
+            android:hint="Subscriber name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:text="@={myviewmodel.inputEmail}"
+            android:hint="Subscriber email"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/editText_name"
+            app:layout_constraintStart_toStartOf="@+id/editText_name"
+            app:layout_constraintTop_toBottomOf="@+id/editText_name" />
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="32dp"
+            android:text="@={myviewmodel.saveOrUpdateButtonText}"
+            android:onClick="@{()->myviewmodel.saveOrUpdate()}"
+            app:layout_constraintStart_toStartOf="@+id/editText_email"
+            app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+
+        <Button
+            android:id="@+id/button_clear_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="85dp"
+            android:text="@={myviewmodel.clearAllOrDeleteButtonText}"
+            android:onClick="@{()->myviewmodel.clearAllOrDelete()}"
+            app:layout_constraintBottom_toBottomOf="@+id/button_submit"
+            app:layout_constraintEnd_toEndOf="@+id/editText_email"
+            app:layout_constraintStart_toEndOf="@+id/button_submit"
+            app:layout_constraintTop_toTopOf="@+id/button_submit" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subscribers_recyclerview"
+            android:layout_width="409dp"
+            android:layout_height="495dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_submit" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
