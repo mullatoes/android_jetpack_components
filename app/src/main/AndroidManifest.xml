@@ -17,8 +17,8 @@
         android:theme="@style/Theme.SeniorAndroidDev"
         tools:targetApi="31">
         <activity
-            android:name=".retrofit.RetrofitActivity"
-            android:exported="true">
+            android:name=".di.DIMainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +26,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".room.WorkingWithActivity"
+            android:name=".retrofit.RetrofitActivity"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".room.WorkingWithActivity"
+            android:exported="false"/>
         <activity
             android:name=".coroutines.CoroutinesActivity"
             android:exported="false" />
