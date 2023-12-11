@@ -25,7 +25,7 @@ class RetrofitActivity : AppCompatActivity() {
 
         val responseLiveData: LiveData<Response<Album>> =
             liveData {
-                val response = retrofitService.getAlbums()
+                val response = retrofitService.getSortedAlbums(3)
                 emit(response)
             }
 
